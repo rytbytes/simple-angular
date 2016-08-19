@@ -1,0 +1,20 @@
+<div ng-controller="newclientController">
+<form>
+<input type="text" ng-model="firstName" placeholder="First Name" name="firstName">
+<input type="text" ng-model="lastName" placeholder="Last Name" name="lastName">
+<input type="text" ng-model="email" placeholder="Email" name="email">
+<input type="text" ng-model="phoneNumber" placeholder="Phone Number" name="phoneNumber">
+<input type="text" ng-model="businessName" placeholder="Business Name" name="businessName">
+<input type="text" ng-model="bankAccount" placeholder="Bank Account Number" name="bankAccount">
+<b>Address</b>
+<input type="text" ng-model="street1" placeholder="Street1" name="street1">
+<input type="text" ng-model="street2" placeholder="Street2" name="street2">
+<input type="text" ng-model="city" placeholder="City" name="city">
+<input type="text" ng-model="state" placeholder="State" name="state">
+<input type="text" ng-model="country" placeholder="Country" name="country">
+<input type="text" ng-model="pinCode" placeholder="Pin Code" name="pinCode">
+
+<input type="text" ng-model="status" placeholder="Status" name="status">
+<input type="submit" value="Save" ng-click="createClient()">
+</form>
+</div>

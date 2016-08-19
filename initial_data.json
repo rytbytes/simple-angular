@@ -1,0 +1,77 @@
+{
+  "clientList":
+  [
+    {
+      "clientID": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@abc.com",
+      "phoneNumber": "0123456789",
+      "businessName": "ABC Technologies",
+      "bankAccount": "CN034-5690",
+      "address": {
+        "street1": "Hallmark Avenue",
+        "street2": "Downing Street",
+        "city": "London",
+        "state": "Oxford",
+        "country": "United Kingdom",
+        "pinCode": "W10 274"
+      },
+      "status": "prospect"
+    },
+    {
+      "clientID": 2,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "jane.doe@abc.com",
+      "phoneNumber": "0123465789",
+      "businessName": "ABC Technologies",
+      "bankAccount": "CN034-5691",
+      "address": {
+        "street1": "Hallmark Avenue",
+        "street2": "Downing Street",
+        "city": "London",
+        "state": "Oxford",
+        "country": "United Kingdom",
+        "pinCode": "W10 274"
+      },
+      "status": "prospect"
+    },
+    {
+      "clientID": 3,
+      "firstName": "Max",
+      "lastName": "Dave",
+      "email": "max_davee@iot.com",
+      "phoneNumber": "0123456700",
+      "businessName": "IOT",
+      "bankAccount": "CN034-5692",
+      "address": {
+        "street1": "Windson Park",
+        "street2": "Preston Street",
+        "city": "Houston",
+        "state": "Texas",
+        "country": "United States of America",
+        "pinCode": "TX 0071"
+      },
+      "status": "pipeline"
+    },
+    {
+      "clientID": 4,
+      "firstName": "Manyavar",
+      "lastName": "Krishnakanth",
+      "email": "tfi@gmail.com",
+      "phoneNumber": "0123456781",
+      "businessName": "",
+      "bankAccount": "2301590045",
+      "address": {
+        "street1": "C",
+        "street2": "Port Colony",
+        "city": "Gandhidham",
+        "state": "Gujarat",
+        "country": "India",
+        "pinCode": "370201"
+      },
+      "status": "active"
+    }
+  ]
+}

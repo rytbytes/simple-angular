@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html ng-app="ClientManager" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Chirag">
+
+    <title>Basic Client Management Dashboard</title>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  </head>
+
+  <body ng-controller="clientsController">
+
+     <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+          <!--card stats start-->
+          <div id="card-stats">
+              <div class="row">
+                  <div class="col s12 m6 l3">
+                      <div class="card">
+                          <div class="card-content  green white-text">
+                              <p class="card-stats-title"><i class="mdi-social-group-add"></i> Total Clients</p>
+                              <h4 class="card-stats-number">{{ clientList.length }}</h4>
+                          </div>
+                          <div class="card-action  green darken-2">
+                              <div id="clients-bar"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col s12 m6 l3">
+                      <div class="card">
+                          <div class="card-content purple white-text">
+                              <p class="card-stats-title"><i class="mdi-editor-attach-money"></i>Active Clients</p>
+                              <h4 class="card-stats-number" >{{ (clientList|filter:{status:'active'}).length }}</h4>
+                              
+                          </div>
+                          <div class="card-action purple darken-2">
+                              <div id="sales-compositebar"></div>
+
+                          </div>
+                      </div>
+                  </div>                            
+                  <div class="col s12 m6 l3">
+                      <div class="card">
+                          <div class="card-content blue-grey white-text">
+                              <p class="card-stats-title"><i class="mdi-action-trending-up"></i>Prospective Clients</p>
+                              <h4 class="card-stats-number">{{ (clientList|filter:{status:'prospect'}).length }}</h4>
+                              
+                          </div>
+                          <div class="card-action blue-grey darken-2">
+                              <div id="profit-tristate"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col s12 m6 l3">
+                      <div class="card">
+                          <div class="card-content pink lighten-2 white-text">
+                              <p class="card-stats-title"><i class="mdi-editor-insert-drive-file"></i> Clients in pipeline</p>
+                              <h4 class="card-stats-number">{{ (clientList|filter:{status:'pipeline'}).length }}</h4>
+                              </div>
+                          <div class="card-action  pink darken-2">
+                              <div id="invoice-line"></div>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+          <!--card stats end-->
+
+          <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+     <!--DataTables example-->
+            <div id="table-datatables">
+              
+              <div class="row">
+
+                <div ng-view class="col s12 l4">
+                  
+                </div>
+                
+                <div class="col s12 m8 l8">
+                <h4 class="header">Clientelle</h4><button><a href="#new_client">Add new client</a></button>
+                  <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                              ClientID
+                              <a href="#" ng-click="orderByField='clientID';">
+                               <i class="material-icons">swap_vert</i>
+                              </a>
+                            </th>
+                            <th>
+                              Firstname
+                              <a href="#" ng-click="orderByField='firstName';">
+                               <i class="material-icons">swap_vert</i>
+                              </a>
+                            </th>
+                            <th>Lastname</th>
+                            <th>Phone Number</th>
+                            <th>Account Number</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                 
+                
+                    <tbody>
+                        <tr ng-repeat="client in clientList|orderBy:orderByField">
+                            <td>{{ client.clientID }}</td>
+                            <td>{{ client.firstName }}</td>
+                            <td>{{ client.lastName }}</td>
+                            <td>{{ client.phoneNumber }}</td>
+                            <td>{{ client.bankAccount }}</td>
+                            <td>{{ client.status }}</td>
+                            <td>
+                              <button ng-click="deleteClient(client)">Delete</button>
+                              <button ng-click="editClient(client)">Edit</button>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div> 
+  
+  </body>
+
+</html>

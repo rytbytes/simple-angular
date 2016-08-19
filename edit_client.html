@@ -1,0 +1,20 @@
+<div ng-controller="editclientController">
+<form>
+<input type="text" ng-model="givenClient.firstName" placeholder="First Name" name="firstName">
+<input type="text" ng-model="givenClient.lastName" placeholder="Last Name" name="lastName">
+<input type="text" ng-model="givenClient.email" placeholder="Email" name="email">
+<input type="text" ng-model="givenClient.phoneNumber" placeholder="Phone Number" name="phoneNumber">
+<input type="text" ng-model="givenClient.businessName" placeholder="Business Name" name="businessName">
+<input type="text" ng-model="givenClient.bankAccount" placeholder="Bank Account Number" name="bankAccount">
+<b>Address</b>
+<input type="text" ng-model="givenClient.address.street1" placeholder="Street1" name="street1">
+<input type="text" ng-model="givenClient.address.street2" placeholder="Street2" name="street2">
+<input type="text" ng-model="givenClient.address.city" placeholder="City" name="city">
+<input type="text" ng-model="givenClient.address.state" placeholder="State" name="state">
+<input type="text" ng-model="givenClient.address.country" placeholder="Country" name="country">
+<input type="text" ng-model="givenClient.address.pinCode" placeholder="Pin Code" name="pinCode">
+
+<input type="text" ng-model="givenClient.status" placeholder="Status" name="status">
+<input type="submit" value="Save" ng-click="updateClient()">
+</form>
+</div>
