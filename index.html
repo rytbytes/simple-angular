@@ -104,15 +104,15 @@
                               </a>
                             </th>
                             <th>
-                              Firstname
+                              Name
                               <a href="#" ng-click="orderByField='firstName';">
                                <i class="material-icons">swap_vert</i>
                               </a>
                             </th>
-                            <th>Lastname</th>
-                            <th>Phone Number</th>
-                            <th>Account Number</th>
-                            <th>Status</th>
+                            <th>Business name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>City</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -121,11 +121,11 @@
                     <tbody>
                         <tr ng-repeat="client in clientList|orderBy:orderByField">
                             <td>{{ client.clientID }}</td>
-                            <td>{{ client.firstName }}</td>
-                            <td>{{ client.lastName }}</td>
+                            <td>{{ client.firstName }} {{ client.lastName }}</td>
+                            <td>{{ client.businessName }}</td>
+                            <td>{{ client.email }}</td>
                             <td>{{ client.phoneNumber }}</td>
-                            <td>{{ client.bankAccount }}</td>
-                            <td>{{ client.status }}</td>
+                            <td>{{ client.city }}</td>
                             <td>
                               <button ng-click="deleteClient(client)">Delete</button>
                               <button ng-click="editClient(client)">Edit</button>
